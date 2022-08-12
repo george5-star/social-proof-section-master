@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.attribution {
+  display: none;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: grid;
+  place-items: center;
+  font-family: "League Spartan";
+  font-size: 15px;
+}
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  background: url(../images/bg-pattern-top-desktop.svg) no-repeat;
+}
+body::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 50%;
+  background: url(../images/bg-pattern-bottom-desktop.svg) no-repeat;
+}
+
+.container {
+  width: 90%;
+  max-width: 65em;
+  margin: 0 auto;
+  min-height: 35em;
+  display: grid;
+  grid-template-rows: repeat(2, 45%);
+  align-items: center;
+  justify-content: center;
+}
+.container .row-1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container .row-1 .col-1 {
+  width: 45%;
+}
+.container .row-1 .col-1 .main-title {
+  font-size: 2.8rem;
+  width: 80%;
+  line-height: 0.9;
+  color: hsl(300deg, 43%, 22%);
+}
+.container .row-1 .col-1 .main-description {
+  margin: 2rem 0;
+  line-height: 1.5;
+  width: 90%;
+}
+.container .row-1 .col-2 {
+  display: grid;
+  height: 80%;
+  width: 50%;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  align-items: center;
+  gap: 1rem;
+}
+.container .row-1 .col-2 .rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #eaeaea;
+  color: hsl(300deg, 43%, 22%);
+  height: 3.5rem;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+}
+.container .row-1 .col-2 .rating__stars-group {
+  display: flex;
+  width: 30%;
+  justify-content: space-between;
+  margin-top: 0.25em;
+  margin-right: 2em;
+}
+.container .row-1 .col-2 .rating div {
+  font-weight: bold;
+}
+.container .row-1 .col-2 .rating-1 {
+  grid-column: 1/11;
+  grid-row: 1/2;
+}
+.container .row-1 .col-2 .rating-2 {
+  grid-row: 2/3;
+  grid-column: 2/12;
+}
+.container .row-1 .col-2 .rating-3 {
+  grid-row: 3/-1;
+  grid-column: 3/-1;
+}
+.container .row-2 {
+  display: grid;
+  grid-template-rows: repeat(12, 1fr);
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.5em;
+}
+.container .row-2 .social-proof-card {
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  background-color: hsl(300deg, 43%, 22%);
+  color: #f4f4f4;
+}
+.container .row-2 .social-proof-card__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+.container .row-2 .social-proof-card__header .profile-image {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-right: 1.2rem;
+  border-radius: 50%;
+  background: white;
+}
+.container .row-2 .social-proof-card__header .image-1 {
+  background: url(../images/image-colton.jpg) no-repeat;
+  background-size: cover;
+}
+.container .row-2 .social-proof-card__header .image-2 {
+  background: url(../images/image-irene.jpg) no-repeat;
+  background-size: cover;
+}
+.container .row-2 .social-proof-card__header .image-3 {
+  background: url(../images/image-anne.jpg) no-repeat;
+  background-size: cover;
+}
+.container .row-2 .social-proof-card__header .profile-description-content {
+  margin-top: -0.15em;
+}
+.container .row-2 .social-proof-card__header .profile-description-content__name {
+  font-size: 1.1rem;
+}
+.container .row-2 .social-proof-card__header .profile-description-content__title {
+  margin-top: 0.15em;
+  font-size: 1rem;
+  color: hsl(333deg, 80%, 67%);
+}
+.container .row-2 .social-proof-card__description {
+  line-height: 1.5;
+  width: 100%;
+}
+.container .row-2 .card-1 {
+  grid-row: 3/11;
+  grid-column: 1/3;
+}
+.container .row-2 .card-2 {
+  grid-row: 4/12;
+  grid-column: 3/5;
+}
+.container .row-2 .card-3 {
+  grid-row: 5/-1;
+  grid-column: 5/-1;
+}
+
+@media (max-width: 40em) {
+  body {
+    overflow-y: scroll;
+    display: block;
+  }
+  body::before {
+    width: 100%;
+    background: url(../images/bg-pattern-top-mobile.svg);
+  }
+  body::after {
+    width: 100%;
+    bottom: 0;
+  }
+  .container .row-1 {
+    flex-direction: column;
+    margin-top: -2rem;
+    margin-bottom: 3rem;
+  }
+  .container .row-1 .col-1,
+.container .row-1 .col-2 {
+    width: 100%;
+  }
+  .container .row-1 .col-1 {
+    margin-top: 2rem;
+    margin-bottom: 0;
+  }
+  .container .row-1 .col-1 .main-description,
+.container .row-1 .col-1 .main-title {
+    width: 100%;
+    text-align: center;
+  }
+  .container .row-1 .col-2 {
+    display: block;
+  }
+  .container .row-1 .col-2 .rating {
+    flex-direction: column;
+    margin: 1rem 0;
+  }
+  .container .row-1 .col-2 .rating__stars-group {
+    margin: 0;
+    justify-content: space-evenly;
+  }
+  .container .row-1 .col-2 .rating__stars-group .star {
+    margin-inline: 0.25rem;
+    margin-block: 0.25rem;
+  }
+  .container .row-2 {
+    margin: 1rem auto;
+    display: block;
+  }
+  .container .row-2 .social-proof-card {
+    margin: 2rem 0;
+    height: 15em;
+  }
+}
